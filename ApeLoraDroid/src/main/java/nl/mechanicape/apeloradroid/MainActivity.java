@@ -6,53 +6,31 @@ import android.content.Context;
 import com.hoho.android.usbserial.driver.UsbSerialDriver;
 import com.hoho.android.usbserial.driver.UsbSerialProber;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
+
 import android.hardware.usb.UsbDeviceConnection;
-import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.ScrollView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.hoho.android.usbserial.driver.UsbSerialPort;
-import com.hoho.android.usbserial.util.HexDump;
-import com.hoho.android.usbserial.util.SerialInputOutputManager;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import org.json.JSONArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.IOException;
 
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import android.widget.Toast;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.os.Build;
-import android.util.Log;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -66,10 +44,12 @@ public class MainActivity extends Activity {
 
     private UsbManager mUsbManager;
     private TextView mTitleTextView;
+    private ListView mListview;
     private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
     private SerialInputOutputManager mSerialIoManager;
-    private loraManager lora=new loraManager();
+    private LoraManager lora;
+    private boolean isUpdated=true;
 
     private final SerialInputOutputManager.Listener mListener =
             new SerialInputOutputManager.Listener() {
@@ -103,6 +83,8 @@ public class MainActivity extends Activity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+        lora=new LoraManager(this);
 
     }
 
@@ -167,11 +149,13 @@ public class MainActivity extends Activity {
             sPort=UsbSerialProber.getDefaultProber().findAllDrivers(mUsbManager).get(0).getPorts().get(0);
         } catch(Exception e){ }
         mTitleTextView = (TextView) findViewById(R.id.textTitle);
+        mListview = (ListView) findViewById(R.id.messageList);
         mTitleTextView.setText("Lora apeapp");
 
         Log.d(TAG, "Resumed, mSerialDevice=" + mSerialDevice);
         if (sPort == null) {
             mTitleTextView.setText("No serial device.");
+            updateDisplay();
         } else {
             final UsbManager usbManager = (UsbManager) getSystemService(Context.USB_SERVICE);
 
@@ -229,41 +213,44 @@ public class MainActivity extends Activity {
 
 
 
-    private void updateDisplay(JSONObject jsonData)
+    private void updateDisplay()
     {
-       mTitleTextView.setText(jsonData.toString());
+       if (isUpdated)
+       {
+           ArrayList<LoraMessage> messages = lora.getMessages();
+           MessagesAdapter adapter = new MessagesAdapter(this, messages);
+           ListView listView = (ListView) findViewById(R.id.messageList);
+           listView.setAdapter(adapter);
+           //adapter.clear();
+          // adapter.addAll(messages);
+       }
+       isUpdated=false;
     }
 
 
     private void updateReceivedData(byte[] data) {
 
         try {
-
-
             String Data=new String(data);
-            mTitleTextView.append(Data);
-
-            if (Data.substring(0,1)=="{")
+            if (Data.charAt(0)=='{')
             {
-                JSONObject jsonObj = new JSONObject(Data.toString());
+                JSONObject jsonObj = new JSONObject(Data);
                 if (jsonObj.length()>0)
                 {
                     lora.addMessage(jsonObj);
-
+                    mTitleTextView.append(".");
+                    isUpdated=true;
+                    updateDisplay();
                 }
+            }
+            else
+            {
+                mTitleTextView.append(Data);
             }
         }
         catch (final JSONException e) {
             Log.e(TAG, "Json parsing error: " + e.getMessage());
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    Toast.makeText(getApplicationContext(),
-                            "Json parsing error: " + e.getMessage(),
-                            Toast.LENGTH_LONG)
-                            .show();
-                }
-            });
+
 
         }
 

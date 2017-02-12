@@ -1,29 +1,22 @@
 package nl.mechanicape.apeloradroid;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.sql.Time;
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 
 /**
  * Created by rein on 7-2-17.
  */
-public class MessagesAdapter extends ArrayAdapter<LoraMessage> {
+public class MessagesHilightAdapter extends ArrayAdapter<LoraMessage> {
 
 
-    public MessagesAdapter(Context context, ArrayList<LoraMessage> messages) {
+    public MessagesHilightAdapter(Context context, ArrayList<LoraMessage> messages) {
 
         super(context, 0, messages);
     }
@@ -38,23 +31,17 @@ public class MessagesAdapter extends ArrayAdapter<LoraMessage> {
         LoraMessage message = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_message, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_message_detail, parent, false);
         }
         // Lookup view for data population
         TextView msgDevAddr = (TextView) convertView.findViewById(R.id.msgDevAddr);
         TextView msgPayload = (TextView) convertView.findViewById(R.id.msgPayload);
         TextView msgDatum = (TextView) convertView.findViewById(R.id.msgDatum);
-        TextView msgTime = (TextView) convertView.findViewById(R.id.msgTime);
         TextView msgRSSI = (TextView) convertView.findViewById(R.id.msgRSSI);
         // Populate the data into the template view using the data object
         msgDevAddr.setText(toHex(message.RXPKObject.DevAddr));
         msgPayload.setText(toHex(message.RXPKObject.FRMPayload));
-        //msgDatum.setText(Long.toString(message.datum));
-        Date date=new Date(message.datum*1000);
-        DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(getContext());
-        DateFormat timeFormat = android.text.format.DateFormat.getTimeFormat(getContext());
-        msgDatum.setText(dateFormat.format(date));
-        msgTime.setText(timeFormat.format(date));
+        msgDatum.setText(new Date(message.datum*1000).toLocaleString());
         msgRSSI.setText(Integer.toString(message.rssi));
 
         // Return the completed view to render on screen

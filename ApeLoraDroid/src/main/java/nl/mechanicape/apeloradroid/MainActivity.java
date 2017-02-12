@@ -1,6 +1,7 @@
 package nl.mechanicape.apeloradroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.hardware.usb.UsbManager;
 import android.content.Context;
 import com.hoho.android.usbserial.driver.UsbSerialDriver;
@@ -10,6 +11,7 @@ import com.hoho.android.usbserial.util.SerialInputOutputManager;
 import android.hardware.usb.UsbDeviceConnection;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -217,15 +219,25 @@ public class MainActivity extends Activity {
     {
        if (isUpdated)
        {
+
            ArrayList<LoraMessage> messages = lora.getMessages();
-           MessagesAdapter adapter = new MessagesAdapter(this, messages);
            ListView listView = (ListView) findViewById(R.id.messageList);
+           MessagesAdapter adapter=new MessagesAdapter(getApplicationContext(),messages);
            listView.setAdapter(adapter);
+
+           ArrayList<LoraMessage> messagesDetail=new ArrayList<LoraMessage>();
+           ListView detailView = (ListView) findViewById(R.id.messageDetailList);
+           MessagesHilightAdapter hlAdapter=new MessagesHilightAdapter(getApplicationContext(),messagesDetail);
+           hlAdapter.add(messages.get(messages.size()-1));
+           detailView.setAdapter(hlAdapter);
+
            //adapter.clear();
           // adapter.addAll(messages);
        }
        isUpdated=false;
     }
+
+
 
 
     private void updateReceivedData(byte[] data) {

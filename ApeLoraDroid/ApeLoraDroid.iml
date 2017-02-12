@@ -70,6 +70,10 @@
     <orderEntry type="jdk" jdkName="Android API 18 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="commons-lang3-3.5" level="project" />
+    <orderEntry type="library" name="commons.lang3" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.5 (2)" level="project" />
+    <orderEntry type="library" name="org.apache.commons" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.5" level="project" />
   </component>
 </module>
 

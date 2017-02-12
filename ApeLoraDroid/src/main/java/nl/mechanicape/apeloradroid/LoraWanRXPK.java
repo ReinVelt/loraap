@@ -1,7 +1,13 @@
 package nl.mechanicape.apeloradroid;
 
 
-import org.apache.commons.lang3.ArrayUtils;
+import android.util.Base64;
+
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
 
 /**
  * Created by rein on 8-2-17.
@@ -30,7 +36,15 @@ public class LoraWanRXPK {
 
     public  LoraWanRXPK(byte[] data)
     {
-        parseRawData(data);
+        byte[] base64DecodedData;
+        try {
+            base64DecodedData=Base64.decode(data, 0);
+        }
+        catch (Exception e)
+        {
+            base64DecodedData=data;
+        }
+        parseRawData(base64DecodedData);
     }
 
     private void parseRawData(byte[] data)
@@ -41,50 +55,33 @@ public class LoraWanRXPK {
 
         MHDR=data[0];
         int MACPayloadLength=(PHYPayload.length-5); //1 bytes for MHDR and 4 for MIC
-        MACPayload= ocopy(PHYPayload, 1, MACPayloadLength);
-        MIC= ocopy(data, PHYPayload.length - 4, 4);
-
-
+        MACPayload= byteCopy(PHYPayload, 1, MACPayloadLength);
+        MIC= byteCopy(data, PHYPayload.length - 4, 4);
         //parse MACPayload elements
-        FHDR=ocopy(MACPayload, 0, 7); //7 bytes
+        FHDR=byteCopy(MACPayload, 0, 7); //7 bytes
         FPort=MACPayload[7];
-        FRMPayload=ocopy(MACPayload, 8, MACPayload.length - 8);
+        FRMPayload=byteCopy(MACPayload, 8, MACPayload.length - 8);
 
         //parse FHDR elements
-        DevAddr=ocopy(FHDR, 0, 4); //4 bytes
+        DevAddr=reverse(byteCopy(FHDR, 0, 4)); //4 bytes
         Fctrl=FHDR[4];  //1 bytes
-        Fcnt=ocopy(FHDR, 5, 2);   //2 bytes
+        Fcnt=reverse(byteCopy(FHDR, 5, 2));   //2 bytes
 
 
     }
 
-
-
-
-//under construction
-    public byte[] ocopy(byte[] data,int start,int length)
+    public byte[] byteCopy(byte[] data,int start,int length)
     {
-
-        //copy only selected subset
+        //copy selected subset
         byte[] byteArray=new byte[length];
         for (int i=0; i<length;i++)
         {
-          byteArray[i]=data[start+i];
+            byteArray[i]=data[start+i];
         }
-        byte[] reversed=byteArray;
-        ArrayUtils.reverse(byteArray);
         return byteArray;
-
-
     }
 
-
-
-    //hier gaat het fout.. reverse werkt op geen enkele manier
-    //krijg semi random data terug......iets met pointers????
-    //reverse moet dus beter !!!! maaar hoe?
-
-    public byte[] reverse(byte[] array) {
+    public static byte[] reverse(byte[] array) {
         byte[] byteArr=new byte[array.length];
         for (int i=0; i<array.length;i++)
         {
@@ -93,6 +90,21 @@ public class LoraWanRXPK {
         return byteArr;
     }
 
+    /*public static byte[] payloadDecode(byte[] rawData)
+    {
+
+        int[] intKey = {0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c};
+        ByteBuffer byteBuffer = ByteBuffer.allocate(intKey.length * 4);
+        IntBuffer intBuffer = byteBuffer.asIntBuffer();
+        intBuffer.put(intKey);
+        byte[] rawKey = byteBuffer.array();
+
+        //SecretKeySpec skeySpec = new SecretKeySpec(rawKey, "AES");
+        //Cipher cipher = Cipher.getInstance("AES");
+        //cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+        //return cipher.doFinal(rawData);
+
+    }*/
 
 
 }

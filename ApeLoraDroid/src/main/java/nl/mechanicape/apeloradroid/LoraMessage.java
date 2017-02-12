@@ -47,12 +47,9 @@ public class LoraMessage {
     public int lsnr;
     public int rssi;
     public int size;
-    public String dataEncoded;
     public byte[] data;
     public LoraWanRXPK RXPKObject;
 
-    public String name;
-    public String description;
 
     public LoraMessage(JSONObject object)
     {
@@ -76,8 +73,7 @@ public class LoraMessage {
                 lsnr= fields.getInt(LSNR);
                 rssi= fields.getInt(RSSI);
                 size= fields.getInt(SIZE);
-                dataEncoded= fields.getString(DATA);
-                data= Base64.decode(data,0);
+                data= fields.getString(DATA).getBytes();
                 RXPKObject=new LoraWanRXPK(data);
 
             }
@@ -104,8 +100,7 @@ public class LoraMessage {
                 lsnr= flsnr;
                 rssi= frssi;
                 size= fsize;
-                dataEncoded= fdata;
-                data= Base64.decode(fdata,0);
+                data= fdata.getBytes();
                 RXPKObject=new LoraWanRXPK(data);
     }
 

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <TextView
+        android:id="@+id/msgDatum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum"
+        android:textColor="#ffffff"
+        android:padding="@dimen/list_padding"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/msgDevAddr"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/msgDevAddr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DevAddr"
+        android:textColor="#ffff00"
+        android:padding="@dimen/list_padding"
+        android:clickable="false"
+        android:layout_below="@+id/msgDatum"
+        android:layout_alignLeft="@+id/msgPayload"
+        android:capitalize="characters"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/msgPayload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payload"
+        android:textColor="#ffffff"
+        android:padding="@dimen/list_padding"
+        android:layout_below="@+id/msgDevAddr"
+        android:layout_toRightOf="@+id/labelAddr"
+        android:layout_marginLeft="35dp"
+        android:capitalize="characters"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/msgRSSI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSSI"
+        android:textColor="#ffffff"
+        android:padding="@dimen/list_padding"
+        android:layout_below="@+id/msgPayload"
+        android:layout_alignLeft="@+id/msgPayload"
+        android:typeface="monospace" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Datum:"
+        android:id="@+id/labelDatum"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:padding="@dimen/list_padding"
+        android:layout_alignRight="@+id/labelPayload"
+        android:textColor="#cacfc8"
+        android:shadowColor="#fffff5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payload:"
+        android:id="@+id/labelPayload"
+        android:padding="@dimen/list_padding"
+        android:layout_below="@+id/msgDevAddr"
+        android:layout_alignParentLeft="true"
+        android:textColor="#cacfc8"
+        android:shadowColor="#fffff5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSSI:"
+        android:id="@+id/labelRSSI"
+        android:padding="@dimen/list_padding"
+        android:layout_below="@+id/labelPayload"
+        android:layout_alignParentLeft="true"
+        android:textColor="#cacfc8"
+        android:shadowColor="#fffff5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sender Id:"
+        android:id="@+id/labelAddr"
+        android:padding="@dimen/list_padding"
+        android:layout_above="@+id/labelPayload"
+        android:layout_alignParentLeft="true"
+        android:textColor="#cacfc8"
+        android:shadowColor="#fffff5" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Details"
+        android:id="@+id/buttonShowDetails"
+        android:background="#3f403e"
+        android:capitalize="words"
+        android:textColor="#010101"
+        android:maxLines="1"
+        android:lines="1"
+        android:clickable="true"
+        android:ellipsize="none"
+        android:enabled="true"
+        android:longClickable="false"
+        android:textAlignment="center"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp"
+        android:paddingLeft="0dp"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        android:singleLine="true"
+        android:shadowColor="#f2fff8"
+        android:textStyle="bold"
+        android:layout_below="@+id/msgRSSI"
+        android:layout_alignParentRight="true"
+        android:onClick="setListFooter" />
+
+</RelativeLayout>

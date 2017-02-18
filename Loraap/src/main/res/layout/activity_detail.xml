@@ -11,14 +11,16 @@
     android:clickable="false">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Datum:"
-        android:id="@+id/textView11"
-        android:layout_below="@+id/textView21"
-        android:layout_alignLeft="@+id/textView16"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:text="PACKAGE INFORMATION:"
+        android:id="@+id/textViewlabel1"
+        android:textColor="#fbff02"
+        android:padding="2dp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/msgdTmst"
+        android:background="#000088" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,8 +29,9 @@
         android:id="@+id/textView"
         android:layout_below="@+id/textView10"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,8 +40,9 @@
         android:id="@+id/textView10"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,8 +51,9 @@
         android:id="@+id/textView2"
         android:layout_below="@+id/textView3"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,8 +62,9 @@
         android:id="@+id/textView3"
         android:layout_below="@+id/textView4"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,8 +73,9 @@
         android:id="@+id/textView4"
         android:layout_below="@+id/textView5"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,8 +84,9 @@
         android:id="@+id/textView5"
         android:layout_below="@+id/textView7"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,8 +95,9 @@
         android:id="@+id/textView6"
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -96,8 +105,9 @@
         android:text="Freq:"
         android:id="@+id/textView7"
         android:layout_below="@+id/textView6"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,18 +116,20 @@
         android:id="@+id/textView8"
         android:layout_below="@+id/textView9"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tmst:"
         android:id="@+id/textView9"
-        android:layout_below="@+id/textView11"
-        android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/textViewlabel1"
+        android:layout_alignRight="@+id/textView4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -126,8 +138,9 @@
         android:id="@+id/textView12"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -136,8 +149,9 @@
         android:id="@+id/textView13"
         android:layout_below="@+id/textView12"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -146,28 +160,32 @@
         android:id="@+id/textView14"
         android:layout_below="@+id/textView15"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MHDR:"
         android:id="@+id/textView15"
-        android:textColor="#cccccc"
+        android:textColor="#a8a8a8"
         android:layout_below="@+id/textView16"
         android:layout_alignParentLeft="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MIC:"
         android:id="@+id/textView16"
-        android:textColor="#cccccc"
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:layout_marginTop="66dp"
         android:layout_below="@+id/textView13"
         android:layout_alignParentLeft="true"
-        android:padding="2dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -176,8 +194,9 @@
         android:id="@+id/textView17"
         android:layout_below="@+id/textView14"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -186,8 +205,9 @@
         android:id="@+id/textView18"
         android:layout_below="@+id/textView17"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -196,8 +216,9 @@
         android:id="@+id/textView19"
         android:layout_below="@+id/textView18"
         android:layout_alignLeft="@+id/textView18"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -206,41 +227,9 @@
         android:id="@+id/textView20"
         android:layout_below="@+id/textView19"
         android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:padding="2dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Id:"
-        android:id="@+id/textView21"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:textColor="#cccccc"
-        android:layout_alignRight="@+id/msgdRSSI"
-        android:padding="2dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Id:"
-        android:id="@+id/msgId"
-        android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/msgdDatum"
-        android:layout_alignParentRight="true"
-        android:padding="2dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Datum:"
-        android:id="@+id/msgdDatum"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/textView21"
-        android:layout_alignLeft="@+id/msgdTmst"
-        android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:textColor="#a8a8a8"
+        android:padding="2dp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -251,7 +240,8 @@
         android:layout_alignTop="@+id/textView9"
         android:layout_alignLeft="@+id/msgdChn"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -262,7 +252,8 @@
         android:layout_below="@+id/msgdTmst"
         android:layout_alignLeft="@+id/msgdRfch"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -273,7 +264,8 @@
         android:layout_below="@+id/msgdChn"
         android:layout_alignLeft="@+id/msgdFreq"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -284,7 +276,8 @@
         android:layout_alignTop="@+id/textView7"
         android:layout_alignLeft="@+id/msgdStat"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -295,7 +288,8 @@
         android:layout_below="@+id/msgdFreq"
         android:layout_alignLeft="@+id/msgdModu"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -306,7 +300,8 @@
         android:layout_below="@+id/msgdStat"
         android:layout_alignLeft="@+id/msgdDatr"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -317,7 +312,8 @@
         android:layout_below="@+id/msgdModu"
         android:layout_alignLeft="@+id/msgdCodr"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -328,7 +324,8 @@
         android:layout_below="@+id/msgdDatr"
         android:layout_alignLeft="@+id/msgdLsnr"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -339,7 +336,8 @@
         android:layout_below="@+id/msgdCodr"
         android:layout_alignLeft="@+id/msgdRSSI"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -350,7 +348,8 @@
         android:layout_below="@+id/msgdLsnr"
         android:layout_alignLeft="@+id/msgdSize"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -361,7 +360,8 @@
         android:layout_below="@+id/msgdRSSI"
         android:layout_alignLeft="@+id/msgdPHYPayload"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -372,7 +372,10 @@
         android:layout_below="@+id/msgdSize"
         android:layout_alignLeft="@+id/msgdMHDR"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:layout_above="@+id/msgdMIC"
+        android:ellipsize="marquee"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -383,7 +386,8 @@
         android:layout_below="@+id/msgdMIC"
         android:layout_alignLeft="@+id/msgdMIC"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -394,7 +398,8 @@
         android:layout_below="@+id/msgdMHDR"
         android:layout_alignLeft="@+id/msgdMHDR"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -405,7 +410,8 @@
         android:layout_below="@+id/msgdDevAddr"
         android:layout_alignLeft="@+id/msgdDevAddr"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -416,7 +422,8 @@
         android:layout_above="@+id/msgdFport"
         android:layout_alignLeft="@+id/msgdFctrl"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -427,7 +434,8 @@
         android:layout_below="@+id/textView18"
         android:layout_alignLeft="@+id/msgdFcnt"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -435,11 +443,11 @@
         android:text="FRMPayload:"
         android:id="@+id/msgdFRMPayload"
         android:textColor="#ffffff"
-        android:layout_below="@+id/msgdFport"
-        android:layout_alignLeft="@+id/msgdFport"
-        android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:layout_above="@+id/button4" />
+        android:layout_below="@+id/textView20"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/msgdFport"
+        android:background="#131319" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -451,7 +459,8 @@
         android:layout_alignTop="@+id/textView16"
         android:layout_toRightOf="@+id/textView20"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:background="#131319" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -464,5 +473,17 @@
         android:layout_below="@+id/textView20"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="86dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PAYLOAD:"
+        android:id="@+id/textView22"
+        android:textColor="#fff902"
+        android:padding="2dp"
+        android:layout_above="@+id/msgdMIC"
+        android:layout_alignRight="@+id/msgdPHYPayload"
+        android:textStyle="bold"
+        android:background="#000088" />
 </RelativeLayout>
 </ScrollView>

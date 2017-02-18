@@ -96,23 +96,6 @@
         android:textColor="#cacfc8"
          />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="message Actions"
-        android:id="@+id/buttonShowDetails"
-        android:background="#3f403e"
-        android:textColor="#010101"
-        android:textAlignment="center"
-        android:paddingTop="0dp"
-        android:paddingRight="0dp"
-        android:paddingBottom="0dp"
-        android:paddingLeft="0dp"
-        android:paddingEnd="0dp"
-        android:paddingStart="0dp"
-        android:singleLine="true"
-        android:textStyle="bold"
-        android:layout_below="@+id/msgRSSI"
-        android:layout_alignParentRight="true" />
+
 
 </RelativeLayout>

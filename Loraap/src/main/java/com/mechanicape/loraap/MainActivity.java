@@ -237,7 +237,7 @@ public class MainActivity extends Activity {
                hlAdapter.add(messages.get(messages.size()-1));
 
                detailView.setAdapter(hlAdapter);
-               button=(Button) detailView.findViewById(R.id.buttonShowDetails);
+
 
 
                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -254,19 +254,18 @@ public class MainActivity extends Activity {
                    }
                });
 
-               if (button!=null)
-               {
-                   //is altijd null !!!ERROR!!!
-                   button.setOnClickListener(new View.OnClickListener(){
+               listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                   public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                           int position, long id) {
 
-                       public void onClick(View v) {
-                           Long messageId=selectedMessage.id;
-                           Intent intent = new Intent(getBaseContext(), DetailMsgActivity.class);
-                           intent.putExtra("messageId", messageId);
-                           startActivity(intent);
-                       }
-                   });
-               }
+                       Long messageId=selectedMessage.id;
+                       Intent intent = new Intent(getBaseContext(), DetailMsgActivity.class);
+                       intent.putExtra("messageId", messageId);
+                       startActivityForResult(intent,0);
+                       return true;
+                   }
+               });
+
 
 
            }

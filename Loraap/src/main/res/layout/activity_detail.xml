@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
@@ -434,7 +438,8 @@
         android:layout_below="@+id/msgdFport"
         android:layout_alignLeft="@+id/msgdFport"
         android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:padding="2dp"
+        android:layout_above="@+id/button4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -454,8 +459,10 @@
         android:layout_height="wrap_content"
         android:text="Define Messagehandler"
         android:id="@+id/button4"
-        android:layout_alignParentBottom="true"
+
+        android:padding="2dp"
+        android:layout_below="@+id/textView20"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:padding="2dp" />
+        android:layout_marginTop="86dp" />
 </RelativeLayout>
+</ScrollView>

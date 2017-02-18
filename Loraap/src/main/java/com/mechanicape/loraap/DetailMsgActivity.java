@@ -11,15 +11,17 @@ public class DetailMsgActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
-        lora=new LoraManager(this);
+
+
         Long messageId = getIntent().getLongExtra("messageId",1);
-        loadData(messageId);
+        updateDisplay(messageId);
     }
 
-    protected void loadData(long messageId)
+    protected void updateDisplay(long messageId)
     {
+        lora=new LoraManager(this);
         LoraMessage message=lora.getMessage(messageId);
+        setContentView(R.layout.activity_detail);
 
     }
 }

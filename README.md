@@ -8,7 +8,7 @@ It requires 2 components:
 * A hardware Lora transceiver
 
 Software, schematics and documentation for both components are described in the
-[Documentation](../Documentation/README.md) folder.
+[Documentation](https://github.com/ReinVelt/loraap/tree/master/Documentation) folder.
 
 
 

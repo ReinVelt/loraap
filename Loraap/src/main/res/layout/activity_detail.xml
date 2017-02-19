@@ -238,10 +238,11 @@
         android:id="@+id/msgdTmst"
         android:textColor="#ffffff"
         android:layout_alignTop="@+id/textView9"
-        android:layout_alignLeft="@+id/msgdChn"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdChn" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -250,10 +251,11 @@
         android:id="@+id/msgdChn"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdTmst"
-        android:layout_alignLeft="@+id/msgdRfch"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdRfch" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -262,10 +264,11 @@
         android:id="@+id/msgdRfch"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdChn"
-        android:layout_alignLeft="@+id/msgdFreq"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdFreq" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -274,10 +277,11 @@
         android:id="@+id/msgdFreq"
         android:textColor="#ffffff"
         android:layout_alignTop="@+id/textView7"
-        android:layout_alignLeft="@+id/msgdStat"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdStat" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -286,10 +290,11 @@
         android:id="@+id/msgdStat"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdFreq"
-        android:layout_alignLeft="@+id/msgdModu"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdModu" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -298,10 +303,11 @@
         android:id="@+id/msgdModu"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdStat"
-        android:layout_alignLeft="@+id/msgdDatr"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdDatr" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -310,10 +316,11 @@
         android:id="@+id/msgdDatr"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdModu"
-        android:layout_alignLeft="@+id/msgdCodr"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdCodr" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -322,10 +329,11 @@
         android:id="@+id/msgdCodr"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdDatr"
-        android:layout_alignLeft="@+id/msgdLsnr"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdLsnr" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -334,10 +342,11 @@
         android:id="@+id/msgdLsnr"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdCodr"
-        android:layout_alignLeft="@+id/msgdRSSI"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdRSSI" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -346,10 +355,11 @@
         android:id="@+id/msgdRSSI"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdLsnr"
-        android:layout_alignLeft="@+id/msgdSize"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdSize" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -358,10 +368,11 @@
         android:id="@+id/msgdSize"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdRSSI"
-        android:layout_alignLeft="@+id/msgdPHYPayload"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdPHYPayload" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -370,12 +381,13 @@
         android:id="@+id/msgdPHYPayload"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdSize"
-        android:layout_alignLeft="@+id/msgdMHDR"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:layout_above="@+id/msgdMIC"
         android:ellipsize="marquee"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdMIC"
+        android:layout_above="@+id/textView22" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -384,10 +396,11 @@
         android:id="@+id/msgdMHDR"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdMIC"
-        android:layout_alignLeft="@+id/msgdMIC"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdMIC" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -396,10 +409,11 @@
         android:id="@+id/msgdDevAddr"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdMHDR"
-        android:layout_alignLeft="@+id/msgdMHDR"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdMHDR" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -408,10 +422,11 @@
         android:id="@+id/msgdFctrl"
         android:textColor="#ffffff"
         android:layout_below="@+id/msgdDevAddr"
-        android:layout_alignLeft="@+id/msgdDevAddr"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdDevAddr" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -420,10 +435,11 @@
         android:id="@+id/msgdFcnt"
         android:textColor="#ffffff"
         android:layout_above="@+id/msgdFport"
-        android:layout_alignLeft="@+id/msgdFctrl"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdFctrl" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -432,10 +448,11 @@
         android:id="@+id/msgdFport"
         android:textColor="#ffffff"
         android:layout_below="@+id/textView18"
-        android:layout_alignLeft="@+id/msgdFcnt"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdFcnt" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -444,10 +461,12 @@
         android:id="@+id/msgdFRMPayload"
         android:textColor="#ffffff"
         android:padding="2dp"
-        android:layout_below="@+id/textView20"
-        android:layout_alignParentLeft="true"
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_alignLeft="@+id/msgdFport"
         android:layout_alignRight="@+id/msgdFport"
-        android:background="#131319" />
+        android:layout_below="@+id/msgdFport"
+        android:layout_alignBottom="@+id/button4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -455,12 +474,12 @@
         android:text="MIC:"
         android:id="@+id/msgdMIC"
         android:textColor="#ffffff"
-        android:layout_marginLeft="53dp"
         android:layout_alignTop="@+id/textView16"
-        android:layout_toRightOf="@+id/textView20"
         android:layout_alignParentRight="true"
         android:padding="2dp"
-        android:background="#131319" />
+        android:background="#131319"
+        android:typeface="monospace"
+        android:layout_toRightOf="@+id/button4" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

@@ -1,6 +1,6 @@
 # Loraap
 
-Loraap is an Android app for debugging and monitoring of LoraWan messages.
+Loraap is an Android app with additional hardware for debugging and monitoring of LoraWan messages.
 
 It requires 2 components:
 

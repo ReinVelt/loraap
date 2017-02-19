@@ -1,13 +1,18 @@
-Single Channel LoRaWAN Receiver
+Single Channel LoRaWAN receiver
 ==============================
-This repository contains a proof-of-concept implementation of a single
-channel LoRaWAN receiver connected to an Android device. It has been tested on the ESP 12E DevKit using a 
-Semtech SX1276 transceiver (HopeRF RFM95W).
+This repository contains a proof-of-concept implementation of a single channel LoRaWAN gateway.
 
-The code is for testing and development purposes only, and is not meant 
-for production usage. 
+The code is for testing and development purposes only, and is not meant for production usage.
 
-Engine is based on code base of Single Channel gateway for RaspberryPI
-which is developed by Thomas Telkamp. Code was ported and extended to run
-on ESP 8266 mcu and provide RTC, Webserver and DNS services by Maarten Westenberg .
-This code is stripped and refactored for its new purpose by Rein Velt (rein@mechanicape.com
+Engine is based on code base of Single Channel gateway for RaspberryPI which is developed by Thomas Telkamp.
+Code was ported and extended by Maarten Westenberg to run on ESP 8266 mcu.
+
+Written  by Rein Velt (rein@mechanicape.com)
+
+Features
+--------
+- listen on configurable frequency and spreading factor
+- SF7 to SF12
+
+
+

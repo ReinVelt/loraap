@@ -156,7 +156,7 @@ public class MainActivity extends Activity {
         } catch(Exception e){ }
         mTitleTextView = (TextView) findViewById(R.id.textTitle);
         mListview = (ListView) findViewById(R.id.messageList);
-        mTitleTextView.setText("Lora apeapp");
+        mTitleTextView.setText("Loraap");
 
         Log.d(TAG, "Resumed, mSerialDevice=" + mSerialDevice);
         if (sPort == null) {
@@ -225,15 +225,16 @@ public class MainActivity extends Activity {
        {
 
            ArrayList<LoraMessage> messages = lora.getMessages();
-           ListView listView = (ListView) findViewById(R.id.messageList);
-           MessagesAdapter adapter=new MessagesAdapter(getApplicationContext(),messages);
-           listView.setAdapter(adapter);
 
-           ArrayList<LoraMessage> messagesDetail=new ArrayList<LoraMessage>();
-           detailView = (ListView) findViewById(R.id.messageDetailList);
-           MessagesHilightAdapter hlAdapter=new MessagesHilightAdapter(getApplicationContext(),messagesDetail);
            if (messages.size()>0)
            {
+               ListView listView = (ListView) findViewById(R.id.messageList);
+               MessagesAdapter adapter=new MessagesAdapter(getApplicationContext(),messages);
+               listView.setAdapter(adapter);
+
+               ArrayList<LoraMessage> messagesDetail=new ArrayList<LoraMessage>();
+               detailView = (ListView) findViewById(R.id.messageDetailList);
+               MessagesHilightAdapter hlAdapter=new MessagesHilightAdapter(getApplicationContext(),messagesDetail);
                hlAdapter.add(messages.get(messages.size()-1));
 
                detailView.setAdapter(hlAdapter);
@@ -257,7 +258,8 @@ public class MainActivity extends Activity {
                listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                    public boolean onItemLongClick(AdapterView<?> parent, View view,
                                            int position, long id) {
-
+                       ArrayList<LoraMessage> messages = lora.getMessages();
+                       selectedMessage=messages.get(position);
                        Long messageId=selectedMessage.id;
                        Intent intent = new Intent(getBaseContext(), DetailMsgActivity.class);
                        intent.putExtra("messageId", messageId);

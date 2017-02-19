@@ -7,6 +7,12 @@ The Lora receiver is created from a RFM95 Lora transceiver module and a ESP12E D
 Both components are available at AliExpress for 6-7 euro. The complete kit  with antenna
 and a nice casing will be available soon at http://mechanicape.nl. ![Lora receiver][receiver]
 
+### Lora receiver Firmware
+The receiver module uses an ESP8266 microcontroller to decode LoraWan messages to JSON and
+send these JSON messages to a Android device using the USB-OTG port. The firmware for the
+microcontroller is compatible with the Arduino development environment. The sourcecode and binaries
+for the firmware are located in the Firmware folder in the root of this project.
+
 
 
 
@@ -14,7 +20,7 @@ and a nice casing will be available soon at http://mechanicape.nl. ![Lora receiv
 
 
 ## Android App
-
+@todo
 
 
 

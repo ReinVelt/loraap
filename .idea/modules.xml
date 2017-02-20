@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ApeLoraDroidProject.iml" filepath="$PROJECT_DIR$/ApeLoraDroidProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Loraap/Loraap.iml" filepath="$PROJECT_DIR$/Loraap/Loraap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LoraapProject.iml" filepath="$PROJECT_DIR$/LoraapProject.iml" />
+    </modules>
+  </component>
+</project>
+

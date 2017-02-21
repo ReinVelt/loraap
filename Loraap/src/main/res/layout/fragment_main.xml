@@ -8,7 +8,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:background="@drawable/apelogo400x400">
 
         <TextView
             android:id="@+id/textTitle"
@@ -27,7 +28,8 @@
             android:background="#010101"
             android:headerDividersEnabled="true"
             android:footerDividersEnabled="true"
-            android:textColor="#ffffff" >
+            android:textColor="#ffffff"
+            android:visibility="invisible">
         </ListView>
 
         <ListView
@@ -51,7 +53,8 @@
             android:layout_above="@+id/messageDetailList"
             android:clickable="true"
             android:dividerHeight="2dp"
-            android:cacheColorHint="#00ff01">
+            android:cacheColorHint="#00ff01"
+            android:visibility="invisible">
         </ListView>
 
 

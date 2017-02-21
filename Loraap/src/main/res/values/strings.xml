@@ -4,6 +4,13 @@
     <string name="app_name">Loraap</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_detail_msg">MainActivity</string>
+    <string name="title_activity_detail_msg">Loraap message detail</string>
+    <string name="title_activity_main">Loraap message index</string>
+    <string name="title_activity_error">Loraap hardware error</string>
+    <string name="errorRequired">
+        This app requires a separate hardware device to work properly.
+        More information about this device can be found at the project website:
+        https://github.com/ReinVelt/loraap/blob/master/Documentation/README.md
+    </string>
 
 </resources>

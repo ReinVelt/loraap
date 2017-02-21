@@ -7,12 +7,11 @@ import android.content.Context;
 import com.hoho.android.usbserial.driver.UsbSerialDriver;
 import com.hoho.android.usbserial.driver.UsbSerialProber;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
-import android.view.View.OnClickListener;
+
 import android.hardware.usb.UsbDeviceConnection;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,7 +26,6 @@ import java.util.concurrent.Executors;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.widget.Toast;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -217,7 +215,11 @@ public class MainActivity extends Activity {
         startIoManager();
     }
 
-
+    private void showErrorHardwareRequired()
+    {
+        Intent intent = new Intent(getBaseContext(),ErrorNoHardwareActivity.class);
+        startActivity(intent);
+    }
 
     private void updateDisplay()
     {
@@ -238,6 +240,9 @@ public class MainActivity extends Activity {
                hlAdapter.add(messages.get(messages.size()-1));
 
                detailView.setAdapter(hlAdapter);
+
+               listView.setVisibility(View.VISIBLE);
+               detailView.setVisibility(View.VISIBLE);
 
 
 
@@ -270,6 +275,10 @@ public class MainActivity extends Activity {
 
 
 
+           }
+           else
+           {
+                showErrorHardwareRequired();
            }
 
            //adapter.clear();

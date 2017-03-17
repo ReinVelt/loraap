@@ -27,6 +27,7 @@ public class LoraManager {
     {
         LoraMessage message=new LoraMessage(jsonMessage);
         long id=db.saveRxpk(message.getContentValues());
+        messages.add(message);
         //return id;
     }
 
@@ -38,7 +39,7 @@ public class LoraManager {
 
     public ArrayList<LoraMessage> getMessages()
     {
-        return db.getMessages();
+        return messages;
     }
 
 }

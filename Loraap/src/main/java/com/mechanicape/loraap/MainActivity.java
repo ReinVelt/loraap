@@ -54,6 +54,8 @@ public class MainActivity extends Activity {
     private LoraMessage selectedMessage;
     private Button button;
     private ListView detailView;
+    private ArrayList<LoraMessage> messages;
+
 
     private final SerialInputOutputManager.Listener mListener =
             new SerialInputOutputManager.Listener() {
@@ -89,6 +91,7 @@ public class MainActivity extends Activity {
         }
 
         lora=new LoraManager(this);
+        messages = lora.getMessages();
 
     }
 
@@ -148,6 +151,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        messages = lora.getMessages();
         //myLocationOverlay.enableMyLocation();
         try{
             sPort=UsbSerialProber.getDefaultProber().findAllDrivers(mUsbManager).get(0).getPorts().get(0);
@@ -226,7 +230,7 @@ public class MainActivity extends Activity {
        if (isUpdated)
        {
 
-           ArrayList<LoraMessage> messages = lora.getMessages();
+           messages = lora.getMessages();
 
            if (messages.size()>0)
            {

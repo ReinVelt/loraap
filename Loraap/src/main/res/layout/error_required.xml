@@ -3,7 +3,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#010100">
+    android:background="@drawable/apelogo400x400"
+    android:baselineAligned="false"
+    android:gravity="top">
 
     <TextView
         android:layout_width="fill_parent"
@@ -14,12 +16,14 @@
         android:textColor="#fff700"
         android:textStyle="bold"
         android:typeface="monospace"
-        android:layout_gravity="top"
-        android:textSize="30dp" />
+        android:textSize="20dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="20dp"
+        android:padding="20dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="236dp"
+        android:layout_width="fill_parent"
+        android:layout_height="221dp"
         android:text="@string/errorRequired"
         android:id="@+id/textView2"
         android:textColor="#fbfff6"
@@ -27,19 +31,15 @@
         android:autoLink="web"
         android:singleLine="false"
         android:autoText="false"
-        android:textSize="16dp"
-        android:padding="5dp"
+        android:textSize="12dp"
         android:textColorHighlight="#fff700"
         android:textColorLink="#fff700"
         android:textStyle="bold"
-        android:textAlignment="center" />
+        android:textAlignment="gravity"
+        android:layout_marginTop="0dp"
+        android:textIsSelectable="true"
+        android:background="#010100"
+        android:layout_marginLeft="-17dp"
+        android:padding="30dp" />
 
-    <ImageView
-        android:layout_width="201dp"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageView"
-        android:src="@drawable/lorareceiver"
-        android:scaleType="fitXY"
-        android:layout_gravity="center_horizontal|bottom"
-        android:padding="10dp" />
 </LinearLayout>

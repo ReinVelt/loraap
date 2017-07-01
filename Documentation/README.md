@@ -20,7 +20,7 @@ for the firmware are located in the Firmware folder in the root of this project.
 
 
 ## Android App
-@todo
+The Android app receives raw json messages from the hardware device. All decoding and crypto stuff is handled by the Android app. Also app-key management should be handled by the Android app to enable custom message handlers.
 
 
 

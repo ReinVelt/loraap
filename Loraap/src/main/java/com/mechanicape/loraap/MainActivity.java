@@ -162,7 +162,7 @@ public class MainActivity extends Activity {
 
         Log.d(TAG, "Resumed, mSerialDevice=" + mSerialDevice);
         if (sPort == null) {
-            mTitleTextView.setText("No serial device.");
+            mTitleTextView.setText("No Lora receiver connected. Please plug it in.");
             updateDisplay();
         } else {
             final UsbManager usbManager = (UsbManager) getSystemService(Context.USB_SERVICE);
@@ -219,11 +219,11 @@ public class MainActivity extends Activity {
         startIoManager();
     }
 
-    private void showErrorHardwareRequired()
-    {
-        Intent intent = new Intent(getBaseContext(),ErrorNoHardwareActivity.class);
-        startActivity(intent);
-    }
+    //private void showErrorHardwareRequired()
+    //{
+    //    Intent intent = new Intent(getBaseContext(),ErrorNoHardwareActivity.class);
+    //    startActivity(intent);
+    //}
 
     private void updateDisplay()
     {
@@ -232,7 +232,7 @@ public class MainActivity extends Activity {
 
            messages = lora.getMessages();
 
-           if (messages.size()>0)
+           if (messages.size()>-1)
            {
                ListView listView = (ListView) findViewById(R.id.messageList);
                MessagesAdapter adapter=new MessagesAdapter(getApplicationContext(),messages);
@@ -241,7 +241,10 @@ public class MainActivity extends Activity {
                ArrayList<LoraMessage> messagesDetail=new ArrayList<LoraMessage>();
                detailView = (ListView) findViewById(R.id.messageDetailList);
                MessagesHilightAdapter hlAdapter=new MessagesHilightAdapter(getApplicationContext(),messagesDetail);
-               hlAdapter.add(messages.get(messages.size()-1));
+               if (messages.size()>0)
+               {
+                   hlAdapter.add(messages.get(messages.size()-1));
+               }
 
                detailView.setAdapter(hlAdapter);
 
@@ -280,10 +283,10 @@ public class MainActivity extends Activity {
 
 
            }
-           else
-           {
-                showErrorHardwareRequired();
-           }
+           //else
+           //{
+           //     showErrorHardwareRequired();
+           //}
 
            //adapter.clear();
           // adapter.addAll(messages);

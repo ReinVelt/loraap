@@ -9,7 +9,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="@drawable/apelogo400x400">
+        >
 
         <TextView
             android:id="@+id/textTitle"

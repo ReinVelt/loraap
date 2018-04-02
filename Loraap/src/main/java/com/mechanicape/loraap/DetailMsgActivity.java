@@ -12,8 +12,6 @@ public class DetailMsgActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         Long messageId = getIntent().getLongExtra("messageId",1);
         updateDisplay(messageId);
     }

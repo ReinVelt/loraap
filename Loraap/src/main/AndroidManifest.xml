@@ -25,7 +25,6 @@
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
-
             <meta-data
                 android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                 android:resource="@xml/device_filter" />
@@ -33,10 +32,6 @@
         <activity
             android:name="com.mechanicape.loraap.DetailMsgActivity"
             android:label="@string/title_activity_detail_msg" >
-        </activity>
-        <activity
-            android:name="com.mechanicape.loraap.ErrorNoHardwareActivity"
-            android:label="@string/title_activity_error" >
         </activity>
     </application>
 

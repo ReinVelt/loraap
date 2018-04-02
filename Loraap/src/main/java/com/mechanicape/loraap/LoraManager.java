@@ -39,7 +39,8 @@ public class LoraManager {
 
     public ArrayList<LoraMessage> getMessages()
     {
-        return messages;
+        return db.getMessages();
+        //return messages;
     }
 
 }

@@ -53,4 +53,9 @@ public class DetailMsgActivity extends Activity {
         }
         return builder.toString();
     }
+
+    public void end()
+    {
+        finish();
+    }
 }

@@ -7,7 +7,7 @@ The code is for testing and development purposes only, and is not meant for prod
 Engine is based on code base of Single Channel gateway for RaspberryPI which is developed by Thomas Telkamp.
 Code was ported and extended by Maarten Westenberg to run on ESP 8266 mcu.
 
-Written  by Rein Velt (rein@mechanicape.com)
+Made by Rein Velt (rein@mechanicape.com)
 
 Features
 --------
